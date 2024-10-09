@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             tabControl1 = new TabControl();
             tabDatosPersonales = new TabPage();
-            panel1 = new Panel();
-            radioButton3 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
-            numericUpDown1 = new NumericUpDown();
-            label1 = new Label();
+            chkgrpGenero = new Panel();
+            rbtnOtro = new RadioButton();
+            rbtnFemenino = new RadioButton();
+            rbtnMasculino = new RadioButton();
+            nupdownEdad = new NumericUpDown();
+            lblGenero = new Label();
             monthCalendar1 = new MonthCalendar();
             txtbxCorreo = new TextBox();
             txtbxDireccion = new TextBox();
@@ -48,22 +49,27 @@
             lblApellidos = new Label();
             lblNombre = new Label();
             tabPreferencias = new TabPage();
+            lblPaises = new Label();
+            lblPais = new Label();
+            cmbxPaises = new ComboBox();
+            chkLstHobbies = new CheckedListBox();
+            chkbxBoletin = new CheckBox();
             tabVisualizacion = new TabPage();
             flowLayoutPanel1 = new FlowLayoutPanel();
             btnGuardar = new Button();
             btnLimpiar = new Button();
             btnSalir = new Button();
-            chkbxBoletin = new CheckBox();
-            chkLstHobbies = new CheckedListBox();
-            cmbxPaises = new ComboBox();
-            lblPais = new Label();
-            lblPaises = new Label();
+            pictureBox1 = new PictureBox();
+            timer1 = new System.Windows.Forms.Timer(components);
+            toolTip1 = new ToolTip(components);
             tabControl1.SuspendLayout();
             tabDatosPersonales.SuspendLayout();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            chkgrpGenero.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nupdownEdad).BeginInit();
             tabPreferencias.SuspendLayout();
+            tabVisualizacion.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -79,9 +85,9 @@
             // 
             // tabDatosPersonales
             // 
-            tabDatosPersonales.Controls.Add(panel1);
-            tabDatosPersonales.Controls.Add(numericUpDown1);
-            tabDatosPersonales.Controls.Add(label1);
+            tabDatosPersonales.Controls.Add(chkgrpGenero);
+            tabDatosPersonales.Controls.Add(nupdownEdad);
+            tabDatosPersonales.Controls.Add(lblGenero);
             tabDatosPersonales.Controls.Add(monthCalendar1);
             tabDatosPersonales.Controls.Add(txtbxCorreo);
             tabDatosPersonales.Controls.Add(txtbxDireccion);
@@ -102,65 +108,65 @@
             tabDatosPersonales.UseVisualStyleBackColor = true;
             tabDatosPersonales.Click += tabDatosPersonales_Click;
             // 
-            // panel1
+            // chkgrpGenero
             // 
-            panel1.Controls.Add(radioButton3);
-            panel1.Controls.Add(radioButton2);
-            panel1.Controls.Add(radioButton1);
-            panel1.Location = new Point(898, 157);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(192, 166);
-            panel1.TabIndex = 13;
+            chkgrpGenero.Controls.Add(rbtnOtro);
+            chkgrpGenero.Controls.Add(rbtnFemenino);
+            chkgrpGenero.Controls.Add(rbtnMasculino);
+            chkgrpGenero.Location = new Point(898, 157);
+            chkgrpGenero.Name = "chkgrpGenero";
+            chkgrpGenero.Size = new Size(192, 166);
+            chkgrpGenero.TabIndex = 13;
             // 
-            // radioButton3
+            // rbtnOtro
             // 
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(3, 112);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(93, 36);
-            radioButton3.TabIndex = 2;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "Otro";
-            radioButton3.UseVisualStyleBackColor = true;
+            rbtnOtro.AutoSize = true;
+            rbtnOtro.Location = new Point(3, 112);
+            rbtnOtro.Name = "rbtnOtro";
+            rbtnOtro.Size = new Size(93, 36);
+            rbtnOtro.TabIndex = 2;
+            rbtnOtro.TabStop = true;
+            rbtnOtro.Text = "Otro";
+            rbtnOtro.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbtnFemenino
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(4, 57);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(152, 36);
-            radioButton2.TabIndex = 1;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Femenino";
-            radioButton2.UseVisualStyleBackColor = true;
+            rbtnFemenino.AutoSize = true;
+            rbtnFemenino.Location = new Point(4, 57);
+            rbtnFemenino.Name = "rbtnFemenino";
+            rbtnFemenino.Size = new Size(152, 36);
+            rbtnFemenino.TabIndex = 1;
+            rbtnFemenino.TabStop = true;
+            rbtnFemenino.Text = "Femenino";
+            rbtnFemenino.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbtnMasculino
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(3, 3);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(154, 36);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Masculino";
-            radioButton1.UseVisualStyleBackColor = true;
+            rbtnMasculino.AutoSize = true;
+            rbtnMasculino.Location = new Point(3, 3);
+            rbtnMasculino.Name = "rbtnMasculino";
+            rbtnMasculino.Size = new Size(154, 36);
+            rbtnMasculino.TabIndex = 0;
+            rbtnMasculino.TabStop = true;
+            rbtnMasculino.Text = "Masculino";
+            rbtnMasculino.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown1
+            // nupdownEdad
             // 
-            numericUpDown1.Location = new Point(498, 144);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(240, 39);
-            numericUpDown1.TabIndex = 12;
+            nupdownEdad.Location = new Point(498, 144);
+            nupdownEdad.Name = "nupdownEdad";
+            nupdownEdad.Size = new Size(240, 39);
+            nupdownEdad.TabIndex = 12;
             // 
-            // label1
+            // lblGenero
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(935, 90);
-            label1.Name = "label1";
-            label1.Size = new Size(92, 32);
-            label1.TabIndex = 11;
-            label1.Text = "Genero";
-            label1.Click += label1_Click_1;
+            lblGenero.AutoSize = true;
+            lblGenero.Location = new Point(935, 90);
+            lblGenero.Name = "lblGenero";
+            lblGenero.Size = new Size(92, 32);
+            lblGenero.TabIndex = 11;
+            lblGenero.Text = "Genero";
+            lblGenero.Click += label1_Click_1;
             // 
             // monthCalendar1
             // 
@@ -269,8 +275,57 @@
             tabPreferencias.UseVisualStyleBackColor = true;
             tabPreferencias.Click += tabPreferencias_Click;
             // 
+            // lblPaises
+            // 
+            lblPaises.AutoSize = true;
+            lblPaises.Location = new Point(171, 335);
+            lblPaises.Name = "lblPaises";
+            lblPaises.Size = new Size(77, 32);
+            lblPaises.TabIndex = 4;
+            lblPaises.Text = "Paises";
+            // 
+            // lblPais
+            // 
+            lblPais.AutoSize = true;
+            lblPais.Location = new Point(650, 283);
+            lblPais.Name = "lblPais";
+            lblPais.Size = new Size(102, 32);
+            lblPais.TabIndex = 3;
+            lblPais.Text = "Hobbies";
+            // 
+            // cmbxPaises
+            // 
+            cmbxPaises.FormattingEnabled = true;
+            cmbxPaises.Items.AddRange(new object[] { "Inglaterra", "China", "Corea", "Argentina", "Marruecos" });
+            cmbxPaises.Location = new Point(171, 387);
+            cmbxPaises.Name = "cmbxPaises";
+            cmbxPaises.Size = new Size(242, 40);
+            cmbxPaises.TabIndex = 2;
+            // 
+            // chkLstHobbies
+            // 
+            chkLstHobbies.FormattingEnabled = true;
+            chkLstHobbies.Items.AddRange(new object[] { "Badminton", "Programar", "Meditar", "Bailar" });
+            chkLstHobbies.Location = new Point(639, 335);
+            chkLstHobbies.Name = "chkLstHobbies";
+            chkLstHobbies.Size = new Size(239, 148);
+            chkLstHobbies.TabIndex = 1;
+            chkLstHobbies.SelectedIndexChanged += chkLstHobbies_SelectedIndexChanged;
+            // 
+            // chkbxBoletin
+            // 
+            chkbxBoletin.AutoSize = true;
+            chkbxBoletin.Location = new Point(171, 283);
+            chkbxBoletin.Name = "chkbxBoletin";
+            chkbxBoletin.Size = new Size(288, 36);
+            chkbxBoletin.TabIndex = 0;
+            chkbxBoletin.Text = "¿Suscribirse al boletin?";
+            chkbxBoletin.UseVisualStyleBackColor = true;
+            chkbxBoletin.CheckedChanged += checkBox1_CheckedChanged;
+            // 
             // tabVisualizacion
             // 
+            tabVisualizacion.Controls.Add(pictureBox1);
             tabVisualizacion.Location = new Point(8, 46);
             tabVisualizacion.Name = "tabVisualizacion";
             tabVisualizacion.Padding = new Padding(3);
@@ -306,6 +361,7 @@
             btnLimpiar.TabIndex = 1;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // btnSalir
             // 
@@ -315,53 +371,19 @@
             btnSalir.TabIndex = 2;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
             // 
-            // chkbxBoletin
+            // pictureBox1
             // 
-            chkbxBoletin.AutoSize = true;
-            chkbxBoletin.Location = new Point(171, 283);
-            chkbxBoletin.Name = "chkbxBoletin";
-            chkbxBoletin.Size = new Size(288, 36);
-            chkbxBoletin.TabIndex = 0;
-            chkbxBoletin.Text = "¿Suscribirse al boletin?";
-            chkbxBoletin.UseVisualStyleBackColor = true;
-            chkbxBoletin.CheckedChanged += checkBox1_CheckedChanged;
+            pictureBox1.Location = new Point(499, 251);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(280, 240);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
-            // chkLstHobbies
+            // toolTip1
             // 
-            chkLstHobbies.FormattingEnabled = true;
-            chkLstHobbies.Items.AddRange(new object[] { "Badminton", "Programar", "Meditar", "Bailar" });
-            chkLstHobbies.Location = new Point(639, 335);
-            chkLstHobbies.Name = "chkLstHobbies";
-            chkLstHobbies.Size = new Size(239, 148);
-            chkLstHobbies.TabIndex = 1;
-            // 
-            // cmbxPaises
-            // 
-            cmbxPaises.FormattingEnabled = true;
-            cmbxPaises.Items.AddRange(new object[] { "Inglaterra", "China", "Corea", "Argentina", "Marruecos" });
-            cmbxPaises.Location = new Point(171, 387);
-            cmbxPaises.Name = "cmbxPaises";
-            cmbxPaises.Size = new Size(242, 40);
-            cmbxPaises.TabIndex = 2;
-            // 
-            // lblPais
-            // 
-            lblPais.AutoSize = true;
-            lblPais.Location = new Point(650, 283);
-            lblPais.Name = "lblPais";
-            lblPais.Size = new Size(102, 32);
-            lblPais.TabIndex = 3;
-            lblPais.Text = "Hobbies";
-            // 
-            // lblPaises
-            // 
-            lblPaises.AutoSize = true;
-            lblPaises.Location = new Point(171, 335);
-            lblPaises.Name = "lblPaises";
-            lblPaises.Size = new Size(77, 32);
-            lblPaises.TabIndex = 4;
-            lblPaises.Text = "Paises";
+            toolTip1.Popup += toolTip1_Popup;
             // 
             // Form1
             // 
@@ -376,12 +398,14 @@
             tabControl1.ResumeLayout(false);
             tabDatosPersonales.ResumeLayout(false);
             tabDatosPersonales.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            chkgrpGenero.ResumeLayout(false);
+            chkgrpGenero.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nupdownEdad).EndInit();
             tabPreferencias.ResumeLayout(false);
             tabPreferencias.PerformLayout();
+            tabVisualizacion.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -406,16 +430,19 @@
         private TextBox txtbxNombre;
         private MonthCalendar monthCalendar1;
         private TextBox txtbxCorreo;
-        private Label label1;
-        private NumericUpDown numericUpDown1;
-        private Panel panel1;
-        private RadioButton radioButton3;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
+        private Label lblGenero;
+        private NumericUpDown nupdownEdad;
+        private Panel chkgrpGenero;
+        private RadioButton rbtnOtro;
+        private RadioButton rbtnFemenino;
+        private RadioButton rbtnMasculino;
         private ComboBox cmbxPaises;
         private CheckedListBox chkLstHobbies;
         private CheckBox chkbxBoletin;
         private Label lblPaises;
         private Label lblPais;
+        private PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timer1;
+        private ToolTip toolTip1;
     }
 }

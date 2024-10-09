@@ -1,3 +1,5 @@
+using System.Windows.Forms;
+
 namespace GestorInfPers
 {
     public partial class Form1 : Form
@@ -58,6 +60,54 @@ namespace GestorInfPers
         }
 
         private void tabPreferencias_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtbdApellidos.Text = String.Empty;
+            txtbxCorreo.Text = String.Empty;
+            txtbxNombre.Text = String.Empty;
+            txtbxDireccion.Text = String.Empty;
+            nupdownEdad.ResetText();
+
+            for (int i = 0; i < chkLstHobbies.Items.Count; i++)
+            {
+                chkLstHobbies.SetItemChecked(i, false);
+            }
+
+            ch
+
+
+            rbtnFemenino.Checked = false;
+            rbtnMasculino.Checked = false;
+            rbtnOtro.Checked = false;
+            chkbxBoletin.Checked = false;
+
+
+
+
+
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void chkLstHobbies_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
+
+        private void cmbxPaises_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
