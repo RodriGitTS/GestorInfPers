@@ -5,6 +5,7 @@ namespace GestorInfPers
 {
     public partial class Form1 : Form
     {
+        private int indiceActual = 0;
         public Form1()
         {
             InitializeComponent();
@@ -172,20 +173,27 @@ namespace GestorInfPers
             String suscrito = "";
             if (chkbxBoletin.Checked) { suscrito = "suscrito al boletin"; } else suscrito = "no estas suscrito al boletin";
             String paises = cmbxPaises.Text;
-            
-           
-            
-            
-            
-           
+
+
+
+
+
+
 
             MessageBox.Show(
-                "Te llamas " + nombre + " ," + genero + " de"+ edad+" años "+ "en " + paises + " , naciste el " + fecha_nac+
-                " \n" +ListaHobbies()+ "y" + suscrito + "\n"
+                "Te llamas " + nombre + " ," + genero + " de " + edad + " años " + "en " + paises + " , naciste el " + fecha_nac +
+                " \n" + ListaHobbies() + " " + suscrito + "\n" + imagen()
 
-                , "Resumen para " + lblCorreo);
+                , "Resumen para " + email);
         }
-
+        String imagen()
+        {
+            if (indiceActual == 3)
+            {
+                return "Te ha salido una jirafa!!";
+            }
+            else return "La imagen resultante no es de agrado";
+        }
 
         String ListaHobbies()
         {
@@ -258,7 +266,7 @@ namespace GestorInfPers
 
             Random random=new Random();
             int numero=random.Next(4);
-           
+            indiceActual = numero;
             picAleatorio.Image = imageList1.Images[numero];
 
 
