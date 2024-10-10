@@ -8,6 +8,8 @@ namespace GestorInfPers
         public Form1()
         {
             InitializeComponent();
+            lblCronometro.Text = DateTime.Now.ToString();
+            timer1.Start();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -149,6 +151,24 @@ namespace GestorInfPers
         private void tabVisualizacion_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_Imagenes_Click(object sender, EventArgs e)
+        {
+
+
+
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblCronometro.Text = DateTime.Now.ToString();
         }
     }
 }
