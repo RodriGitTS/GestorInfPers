@@ -10,8 +10,14 @@ namespace GestorInfPers
             InitializeComponent();
             lblCronometro.Text = DateTime.Now.ToString();
             timer1.Start();
-        }
+            imageList1.ImageSize = new System.Drawing.Size(400, 400);
+            for (int i=1; i <= 5; i++)
+            {
+                imageList1.Images.Add(Image.FromFile("imagen_aleatoria_"+i+ ".png"));
+            }
+            picAleatorio.Image= imageList1.Images[0];
 
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -186,7 +192,7 @@ namespace GestorInfPers
             // Verificar si hay elementos seleccionados en el CheckedListBox
             if (chkLstHobbies.CheckedItems.Count == 0)
             {
-                return "Sin hobbies";
+                return "Sin hobbies ";
             }
 
             String lista = "Tus hobbies son ";
@@ -250,7 +256,10 @@ namespace GestorInfPers
         private void btn_Imagenes_Click(object sender, EventArgs e)
         {
 
-
+            Random random=new Random();
+            int numero=random.Next(4);
+           
+            picAleatorio.Image = imageList1.Images[numero];
 
 
         }

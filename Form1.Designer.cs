@@ -58,7 +58,6 @@
             lblCronometro = new Label();
             btnImagenes = new Button();
             lblFoto = new Label();
-            picAleatorio = new PictureBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
             btnGuardar = new Button();
             btnLimpiar = new Button();
@@ -66,14 +65,16 @@
             timer1 = new System.Windows.Forms.Timer(components);
             toolTip1 = new ToolTip(components);
             helpProvider1 = new HelpProvider();
+            picAleatorio = new PictureBox();
+            imageList1 = new ImageList(components);
             tabControl1.SuspendLayout();
             tabDatosPersonales.SuspendLayout();
             chkgrpGenero.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nupdownEdad).BeginInit();
             tabPreferencias.SuspendLayout();
             tabVisualizacion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picAleatorio).BeginInit();
             flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picAleatorio).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -184,7 +185,6 @@
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.TabIndex = 10;
             monthCalendar1.TitleBackColor = SystemColors.AppWorkspace;
-            
             // 
             // txtbxCorreo
             // 
@@ -408,14 +408,6 @@
             lblFoto.TabIndex = 1;
             lblFoto.Text = "Elige foto aleatoria";
             // 
-            // picAleatorio
-            // 
-            picAleatorio.Location = new Point(500, 325);
-            picAleatorio.Name = "picAleatorio";
-            picAleatorio.Size = new Size(280, 240);
-            picAleatorio.TabIndex = 0;
-            picAleatorio.TabStop = false;
-            // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Controls.Add(btnGuardar);
@@ -474,6 +466,20 @@
             // 
             toolTip1.Popup += toolTip1_Popup;
             // 
+            // picAleatorio
+            // 
+            picAleatorio.Location = new Point(500, 325);
+            picAleatorio.Name = "picAleatorio";
+            picAleatorio.Size = new Size(280, 240);
+            picAleatorio.TabIndex = 0;
+            picAleatorio.TabStop = false;
+            // 
+            // imageList1
+            // 
+            imageList1.ColorDepth = ColorDepth.Depth32Bit;
+            imageList1.ImageSize = new Size(16, 16);
+            imageList1.TransparentColor = Color.Transparent;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
@@ -495,8 +501,8 @@
             tabPreferencias.PerformLayout();
             tabVisualizacion.ResumeLayout(false);
             tabVisualizacion.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)picAleatorio).EndInit();
             flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picAleatorio).EndInit();
             ResumeLayout(false);
         }
 
@@ -532,12 +538,13 @@
         private CheckBox chkbxBoletin;
         private Label lblPaises;
         private Label lblPais;
-        private PictureBox picAleatorio;
         private System.Windows.Forms.Timer timer1;
         private ToolTip toolTip1;
         private Button btnImagenes;
         private Label lblFoto;
         private Label lblCronometro;
         private HelpProvider helpProvider1;
+        private PictureBox picAleatorio;
+        private ImageList imageList1;
     }
 }
