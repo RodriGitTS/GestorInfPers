@@ -65,6 +65,7 @@
             btnSalir = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
             toolTip1 = new ToolTip(components);
+            helpProvider1 = new HelpProvider();
             tabControl1.SuspendLayout();
             tabDatosPersonales.SuspendLayout();
             chkgrpGenero.SuspendLayout();
@@ -183,6 +184,7 @@
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.TabIndex = 10;
             monthCalendar1.TitleBackColor = SystemColors.AppWorkspace;
+            
             // 
             // txtbxCorreo
             // 
@@ -536,5 +538,6 @@
         private Button btnImagenes;
         private Label lblFoto;
         private Label lblCronometro;
+        private HelpProvider helpProvider1;
     }
 }
