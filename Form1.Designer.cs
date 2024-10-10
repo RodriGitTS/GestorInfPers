@@ -55,11 +55,11 @@
             chkLstHobbies = new CheckedListBox();
             chkbxBoletin = new CheckBox();
             tabVisualizacion = new TabPage();
+            pictureBox1 = new PictureBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
             btnGuardar = new Button();
             btnLimpiar = new Button();
             btnSalir = new Button();
-            pictureBox1 = new PictureBox();
             timer1 = new System.Windows.Forms.Timer(components);
             toolTip1 = new ToolTip(components);
             tabControl1.SuspendLayout();
@@ -68,8 +68,8 @@
             ((System.ComponentModel.ISupportInitialize)nupdownEdad).BeginInit();
             tabPreferencias.SuspendLayout();
             tabVisualizacion.SuspendLayout();
-            flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -85,6 +85,7 @@
             // 
             // tabDatosPersonales
             // 
+            tabDatosPersonales.BackColor = Color.FromArgb(0, 64, 64);
             tabDatosPersonales.Controls.Add(chkgrpGenero);
             tabDatosPersonales.Controls.Add(nupdownEdad);
             tabDatosPersonales.Controls.Add(lblGenero);
@@ -105,7 +106,6 @@
             tabDatosPersonales.Size = new Size(1367, 797);
             tabDatosPersonales.TabIndex = 0;
             tabDatosPersonales.Text = "Datos Personales";
-            tabDatosPersonales.UseVisualStyleBackColor = true;
             tabDatosPersonales.Click += tabDatosPersonales_Click;
             // 
             // chkgrpGenero
@@ -121,6 +121,7 @@
             // rbtnOtro
             // 
             rbtnOtro.AutoSize = true;
+            rbtnOtro.ForeColor = Color.Yellow;
             rbtnOtro.Location = new Point(3, 112);
             rbtnOtro.Name = "rbtnOtro";
             rbtnOtro.Size = new Size(93, 36);
@@ -132,6 +133,7 @@
             // rbtnFemenino
             // 
             rbtnFemenino.AutoSize = true;
+            rbtnFemenino.ForeColor = Color.Yellow;
             rbtnFemenino.Location = new Point(4, 57);
             rbtnFemenino.Name = "rbtnFemenino";
             rbtnFemenino.Size = new Size(152, 36);
@@ -143,6 +145,7 @@
             // rbtnMasculino
             // 
             rbtnMasculino.AutoSize = true;
+            rbtnMasculino.ForeColor = Color.Yellow;
             rbtnMasculino.Location = new Point(3, 3);
             rbtnMasculino.Name = "rbtnMasculino";
             rbtnMasculino.Size = new Size(154, 36);
@@ -153,7 +156,7 @@
             // 
             // nupdownEdad
             // 
-            nupdownEdad.Location = new Point(498, 144);
+            nupdownEdad.Location = new Point(516, 144);
             nupdownEdad.Name = "nupdownEdad";
             nupdownEdad.Size = new Size(240, 39);
             nupdownEdad.TabIndex = 12;
@@ -161,22 +164,26 @@
             // lblGenero
             // 
             lblGenero.AutoSize = true;
+            lblGenero.Font = new Font("Trebuchet MS", 12F);
+            lblGenero.ForeColor = Color.Yellow;
             lblGenero.Location = new Point(935, 90);
             lblGenero.Name = "lblGenero";
-            lblGenero.Size = new Size(92, 32);
+            lblGenero.Size = new Size(119, 40);
             lblGenero.TabIndex = 11;
             lblGenero.Text = "Genero";
             lblGenero.Click += label1_Click_1;
             // 
             // monthCalendar1
             // 
-            monthCalendar1.Location = new Point(467, 249);
+            monthCalendar1.BackColor = Color.Teal;
+            monthCalendar1.Location = new Point(474, 269);
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.TabIndex = 10;
+            monthCalendar1.TitleBackColor = SystemColors.AppWorkspace;
             // 
             // txtbxCorreo
             // 
-            txtbxCorreo.Location = new Point(865, 389);
+            txtbxCorreo.Location = new Point(864, 397);
             txtbxCorreo.Name = "txtbxCorreo";
             txtbxCorreo.Size = new Size(259, 39);
             txtbxCorreo.TabIndex = 9;
@@ -205,18 +212,22 @@
             // lblEdad
             // 
             lblEdad.AutoSize = true;
-            lblEdad.Location = new Point(588, 90);
+            lblEdad.Font = new Font("Trebuchet MS", 12F);
+            lblEdad.ForeColor = Color.Yellow;
+            lblEdad.Location = new Point(606, 90);
             lblEdad.Name = "lblEdad";
-            lblEdad.Size = new Size(66, 32);
+            lblEdad.Size = new Size(87, 40);
             lblEdad.TabIndex = 5;
             lblEdad.Text = "Edad";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(536, 208);
+            label5.Font = new Font("Trebuchet MS", 12F);
+            label5.ForeColor = Color.Yellow;
+            label5.Location = new Point(498, 218);
             label5.Name = "label5";
-            label5.Size = new Size(202, 32);
+            label5.Size = new Size(270, 40);
             label5.TabIndex = 4;
             label5.Text = "Fecha nacimiento";
             label5.Click += label5_Click;
@@ -224,9 +235,11 @@
             // lblCorreo
             // 
             lblCorreo.AutoSize = true;
+            lblCorreo.Font = new Font("Trebuchet MS", 12F);
+            lblCorreo.ForeColor = Color.Yellow;
             lblCorreo.Location = new Point(941, 354);
             lblCorreo.Name = "lblCorreo";
-            lblCorreo.Size = new Size(86, 32);
+            lblCorreo.Size = new Size(111, 40);
             lblCorreo.TabIndex = 3;
             lblCorreo.Text = "Correo";
             lblCorreo.Click += lblCorreo_Click;
@@ -234,9 +247,11 @@
             // lblDireccion
             // 
             lblDireccion.AutoSize = true;
-            lblDireccion.Location = new Point(239, 354);
+            lblDireccion.Font = new Font("Trebuchet MS", 12F);
+            lblDireccion.ForeColor = Color.Yellow;
+            lblDireccion.Location = new Point(214, 354);
             lblDireccion.Name = "lblDireccion";
-            lblDireccion.Size = new Size(114, 32);
+            lblDireccion.Size = new Size(150, 40);
             lblDireccion.TabIndex = 2;
             lblDireccion.Text = "Direccion";
             lblDireccion.Click += label3_Click;
@@ -244,23 +259,30 @@
             // lblApellidos
             // 
             lblApellidos.AutoSize = true;
-            lblApellidos.Location = new Point(231, 208);
+            lblApellidos.Font = new Font("Trebuchet MS", 12F);
+            lblApellidos.ForeColor = Color.Yellow;
+            lblApellidos.Location = new Point(229, 218);
             lblApellidos.Name = "lblApellidos";
-            lblApellidos.Size = new Size(112, 32);
+            lblApellidos.Size = new Size(146, 40);
             lblApellidos.TabIndex = 1;
             lblApellidos.Text = "Apellidos";
+            lblApellidos.Click += lblApellidos_Click;
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(239, 90);
+            lblNombre.BackColor = Color.FromArgb(0, 64, 64);
+            lblNombre.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblNombre.ForeColor = Color.Yellow;
+            lblNombre.Location = new Point(225, 90);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(102, 32);
+            lblNombre.Size = new Size(128, 40);
             lblNombre.TabIndex = 0;
             lblNombre.Text = "Nombre";
             // 
             // tabPreferencias
             // 
+            tabPreferencias.BackColor = Color.FromArgb(0, 64, 64);
             tabPreferencias.Controls.Add(lblPaises);
             tabPreferencias.Controls.Add(lblPais);
             tabPreferencias.Controls.Add(cmbxPaises);
@@ -272,24 +294,27 @@
             tabPreferencias.Size = new Size(1367, 797);
             tabPreferencias.TabIndex = 1;
             tabPreferencias.Text = "Preferencias";
-            tabPreferencias.UseVisualStyleBackColor = true;
             tabPreferencias.Click += tabPreferencias_Click;
             // 
             // lblPaises
             // 
             lblPaises.AutoSize = true;
-            lblPaises.Location = new Point(171, 335);
+            lblPaises.Font = new Font("Trebuchet MS", 12F);
+            lblPaises.ForeColor = Color.Yellow;
+            lblPaises.Location = new Point(171, 384);
             lblPaises.Name = "lblPaises";
-            lblPaises.Size = new Size(77, 32);
+            lblPaises.Size = new Size(103, 40);
             lblPaises.TabIndex = 4;
             lblPaises.Text = "Paises";
             // 
             // lblPais
             // 
             lblPais.AutoSize = true;
+            lblPais.Font = new Font("Trebuchet MS", 12F);
+            lblPais.ForeColor = Color.Yellow;
             lblPais.Location = new Point(650, 283);
             lblPais.Name = "lblPais";
-            lblPais.Size = new Size(102, 32);
+            lblPais.Size = new Size(130, 40);
             lblPais.TabIndex = 3;
             lblPais.Text = "Hobbies";
             // 
@@ -297,13 +322,15 @@
             // 
             cmbxPaises.FormattingEnabled = true;
             cmbxPaises.Items.AddRange(new object[] { "Inglaterra", "China", "Corea", "Argentina", "Marruecos" });
-            cmbxPaises.Location = new Point(171, 387);
+            cmbxPaises.Location = new Point(181, 427);
             cmbxPaises.Name = "cmbxPaises";
             cmbxPaises.Size = new Size(242, 40);
             cmbxPaises.TabIndex = 2;
             // 
             // chkLstHobbies
             // 
+            chkLstHobbies.BackColor = Color.FromArgb(0, 64, 64);
+            chkLstHobbies.ForeColor = Color.Yellow;
             chkLstHobbies.FormattingEnabled = true;
             chkLstHobbies.Items.AddRange(new object[] { "Badminton", "Programar", "Meditar", "Bailar" });
             chkLstHobbies.Location = new Point(639, 335);
@@ -315,9 +342,11 @@
             // chkbxBoletin
             // 
             chkbxBoletin.AutoSize = true;
+            chkbxBoletin.Font = new Font("Trebuchet MS", 12F);
+            chkbxBoletin.ForeColor = Color.Yellow;
             chkbxBoletin.Location = new Point(171, 283);
             chkbxBoletin.Name = "chkbxBoletin";
-            chkbxBoletin.Size = new Size(288, 36);
+            chkbxBoletin.Size = new Size(370, 44);
             chkbxBoletin.TabIndex = 0;
             chkbxBoletin.Text = "¿Suscribirse al boletin?";
             chkbxBoletin.UseVisualStyleBackColor = true;
@@ -325,53 +354,16 @@
             // 
             // tabVisualizacion
             // 
+            tabVisualizacion.BackColor = Color.FromArgb(0, 64, 64);
             tabVisualizacion.Controls.Add(pictureBox1);
+            tabVisualizacion.ForeColor = Color.CornflowerBlue;
             tabVisualizacion.Location = new Point(8, 46);
             tabVisualizacion.Name = "tabVisualizacion";
             tabVisualizacion.Padding = new Padding(3);
             tabVisualizacion.Size = new Size(1367, 797);
             tabVisualizacion.TabIndex = 2;
             tabVisualizacion.Text = "Visualizacion";
-            tabVisualizacion.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.Controls.Add(btnGuardar);
-            flowLayoutPanel1.Controls.Add(btnLimpiar);
-            flowLayoutPanel1.Controls.Add(btnSalir);
-            flowLayoutPanel1.Location = new Point(20, 880);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(504, 46);
-            flowLayoutPanel1.TabIndex = 1;
-            // 
-            // btnGuardar
-            // 
-            btnGuardar.Location = new Point(3, 3);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(162, 43);
-            btnGuardar.TabIndex = 0;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
-            // 
-            // btnLimpiar
-            // 
-            btnLimpiar.Location = new Point(171, 3);
-            btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(162, 43);
-            btnLimpiar.TabIndex = 1;
-            btnLimpiar.Text = "Limpiar";
-            btnLimpiar.UseVisualStyleBackColor = true;
-            btnLimpiar.Click += btnLimpiar_Click;
-            // 
-            // btnSalir
-            // 
-            btnSalir.Location = new Point(339, 3);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(162, 43);
-            btnSalir.TabIndex = 2;
-            btnSalir.Text = "Salir";
-            btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += btnSalir_Click;
+            tabVisualizacion.Click += tabVisualizacion_Click;
             // 
             // pictureBox1
             // 
@@ -381,6 +373,55 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Controls.Add(btnGuardar);
+            flowLayoutPanel1.Controls.Add(btnLimpiar);
+            flowLayoutPanel1.Controls.Add(btnSalir);
+            flowLayoutPanel1.Location = new Point(20, 872);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(550, 65);
+            flowLayoutPanel1.TabIndex = 1;
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.BackColor = Color.FromArgb(255, 128, 128);
+            btnGuardar.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            btnGuardar.ForeColor = Color.Yellow;
+            btnGuardar.Location = new Point(3, 3);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(172, 62);
+            btnGuardar.TabIndex = 0;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
+            // 
+            // btnLimpiar
+            // 
+            btnLimpiar.BackColor = Color.FromArgb(255, 128, 128);
+            btnLimpiar.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            btnLimpiar.ForeColor = Color.Yellow;
+            btnLimpiar.Location = new Point(181, 3);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(172, 62);
+            btnLimpiar.TabIndex = 1;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
+            // 
+            // btnSalir
+            // 
+            btnSalir.BackColor = Color.FromArgb(255, 128, 128);
+            btnSalir.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            btnSalir.ForeColor = Color.Yellow;
+            btnSalir.Location = new Point(359, 3);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(172, 62);
+            btnSalir.TabIndex = 2;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
+            // 
             // toolTip1
             // 
             toolTip1.Popup += toolTip1_Popup;
@@ -389,6 +430,7 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(0, 64, 64);
             ClientSize = new Size(1467, 949);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(tabControl1);
@@ -404,8 +446,8 @@
             tabPreferencias.ResumeLayout(false);
             tabPreferencias.PerformLayout();
             tabVisualizacion.ResumeLayout(false);
-            flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            flowLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 

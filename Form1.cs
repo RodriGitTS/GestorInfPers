@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Windows.Forms;
 
 namespace GestorInfPers
@@ -77,7 +78,7 @@ namespace GestorInfPers
                 chkLstHobbies.SetItemChecked(i, false);
             }
 
-            ch
+
 
 
             rbtnFemenino.Checked = false;
@@ -108,6 +109,44 @@ namespace GestorInfPers
         }
 
         private void cmbxPaises_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            String nombre = txtbxNombre.Text;
+            String apellidos = txtbdApellidos.Text;
+            String email = txtbxCorreo.Text;
+            String edad = nupdownEdad.Text;
+            DateTime fecha_nac = monthCalendar1.SelectionStart;
+            String genero;
+            if (rbtnMasculino.Checked)
+            {
+                genero = "masculino";
+            }
+            else if (rbtnOtro.Checked)
+            {
+                genero = "otro";
+            }
+            else if (rbtnFemenino.Checked)
+            {
+                genero = "femenino";
+            }
+            Boolean suscrito = chkbxBoletin.Checked;
+            String paises = cmbxPaises.Text;
+            ArrayList hobbies = new ArrayList();
+            //Recorrer y añadir los validos
+
+
+        }
+
+        private void lblApellidos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabVisualizacion_Click(object sender, EventArgs e)
         {
 
         }
