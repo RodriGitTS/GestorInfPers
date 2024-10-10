@@ -58,6 +58,7 @@
             lblCronometro = new Label();
             btnImagenes = new Button();
             lblFoto = new Label();
+            picAleatorio = new PictureBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
             btnGuardar = new Button();
             btnLimpiar = new Button();
@@ -65,7 +66,6 @@
             timer1 = new System.Windows.Forms.Timer(components);
             toolTip1 = new ToolTip(components);
             helpProvider1 = new HelpProvider();
-            picAleatorio = new PictureBox();
             imageList1 = new ImageList(components);
             tabControl1.SuspendLayout();
             tabDatosPersonales.SuspendLayout();
@@ -73,8 +73,8 @@
             ((System.ComponentModel.ISupportInitialize)nupdownEdad).BeginInit();
             tabPreferencias.SuspendLayout();
             tabVisualizacion.SuspendLayout();
-            flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picAleatorio).BeginInit();
+            flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -82,6 +82,7 @@
             tabControl1.Controls.Add(tabDatosPersonales);
             tabControl1.Controls.Add(tabPreferencias);
             tabControl1.Controls.Add(tabVisualizacion);
+            tabControl1.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold | FontStyle.Italic);
             tabControl1.Location = new Point(12, 3);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -129,7 +130,7 @@
             rbtnOtro.ForeColor = Color.Yellow;
             rbtnOtro.Location = new Point(3, 112);
             rbtnOtro.Name = "rbtnOtro";
-            rbtnOtro.Size = new Size(93, 36);
+            rbtnOtro.Size = new Size(97, 36);
             rbtnOtro.TabIndex = 2;
             rbtnOtro.TabStop = true;
             rbtnOtro.Text = "Otro";
@@ -141,7 +142,7 @@
             rbtnFemenino.ForeColor = Color.Yellow;
             rbtnFemenino.Location = new Point(4, 57);
             rbtnFemenino.Name = "rbtnFemenino";
-            rbtnFemenino.Size = new Size(152, 36);
+            rbtnFemenino.Size = new Size(158, 36);
             rbtnFemenino.TabIndex = 1;
             rbtnFemenino.TabStop = true;
             rbtnFemenino.Text = "Femenino";
@@ -153,7 +154,7 @@
             rbtnMasculino.ForeColor = Color.Yellow;
             rbtnMasculino.Location = new Point(3, 3);
             rbtnMasculino.Name = "rbtnMasculino";
-            rbtnMasculino.Size = new Size(154, 36);
+            rbtnMasculino.Size = new Size(164, 36);
             rbtnMasculino.TabIndex = 0;
             rbtnMasculino.TabStop = true;
             rbtnMasculino.Text = "Masculino";
@@ -188,6 +189,7 @@
             // 
             // txtbxCorreo
             // 
+            txtbxCorreo.BackColor = SystemColors.Menu;
             txtbxCorreo.Location = new Point(864, 397);
             txtbxCorreo.Name = "txtbxCorreo";
             txtbxCorreo.Size = new Size(259, 39);
@@ -401,12 +403,20 @@
             // lblFoto
             // 
             lblFoto.AutoSize = true;
-            lblFoto.Font = new Font("Trebuchet MS", 12F);
+            lblFoto.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblFoto.Location = new Point(500, 244);
             lblFoto.Name = "lblFoto";
-            lblFoto.Size = new Size(292, 40);
+            lblFoto.Size = new Size(302, 40);
             lblFoto.TabIndex = 1;
             lblFoto.Text = "Elige foto aleatoria";
+            // 
+            // picAleatorio
+            // 
+            picAleatorio.Location = new Point(500, 325);
+            picAleatorio.Name = "picAleatorio";
+            picAleatorio.Size = new Size(280, 240);
+            picAleatorio.TabIndex = 0;
+            picAleatorio.TabStop = false;
             // 
             // flowLayoutPanel1
             // 
@@ -466,14 +476,6 @@
             // 
             toolTip1.Popup += toolTip1_Popup;
             // 
-            // picAleatorio
-            // 
-            picAleatorio.Location = new Point(500, 325);
-            picAleatorio.Name = "picAleatorio";
-            picAleatorio.Size = new Size(280, 240);
-            picAleatorio.TabIndex = 0;
-            picAleatorio.TabStop = false;
-            // 
             // imageList1
             // 
             imageList1.ColorDepth = ColorDepth.Depth32Bit;
@@ -501,8 +503,8 @@
             tabPreferencias.PerformLayout();
             tabVisualizacion.ResumeLayout(false);
             tabVisualizacion.PerformLayout();
-            flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picAleatorio).EndInit();
+            flowLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
