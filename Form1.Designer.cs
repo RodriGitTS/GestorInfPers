@@ -62,6 +62,8 @@
             btnSalir = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
             toolTip1 = new ToolTip(components);
+            label1 = new Label();
+            button1 = new Button();
             tabControl1.SuspendLayout();
             tabDatosPersonales.SuspendLayout();
             chkgrpGenero.SuspendLayout();
@@ -355,8 +357,10 @@
             // tabVisualizacion
             // 
             tabVisualizacion.BackColor = Color.FromArgb(0, 64, 64);
+            tabVisualizacion.Controls.Add(button1);
+            tabVisualizacion.Controls.Add(label1);
             tabVisualizacion.Controls.Add(pictureBox1);
-            tabVisualizacion.ForeColor = Color.CornflowerBlue;
+            tabVisualizacion.ForeColor = Color.Yellow;
             tabVisualizacion.Location = new Point(8, 46);
             tabVisualizacion.Name = "tabVisualizacion";
             tabVisualizacion.Padding = new Padding(3);
@@ -386,7 +390,7 @@
             // btnGuardar
             // 
             btnGuardar.BackColor = Color.FromArgb(255, 128, 128);
-            btnGuardar.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            btnGuardar.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             btnGuardar.ForeColor = Color.Yellow;
             btnGuardar.Location = new Point(3, 3);
             btnGuardar.Name = "btnGuardar";
@@ -399,7 +403,7 @@
             // btnLimpiar
             // 
             btnLimpiar.BackColor = Color.FromArgb(255, 128, 128);
-            btnLimpiar.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            btnLimpiar.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             btnLimpiar.ForeColor = Color.Yellow;
             btnLimpiar.Location = new Point(181, 3);
             btnLimpiar.Name = "btnLimpiar";
@@ -412,7 +416,7 @@
             // btnSalir
             // 
             btnSalir.BackColor = Color.FromArgb(255, 128, 128);
-            btnSalir.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            btnSalir.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             btnSalir.ForeColor = Color.Yellow;
             btnSalir.Location = new Point(359, 3);
             btnSalir.Name = "btnSalir";
@@ -425,6 +429,27 @@
             // toolTip1
             // 
             toolTip1.Popup += toolTip1_Popup;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Trebuchet MS", 12F);
+            label1.Location = new Point(528, 181);
+            label1.Name = "label1";
+            label1.Size = new Size(215, 40);
+            label1.TabIndex = 1;
+            label1.Text = "Elige una foto";
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(255, 128, 128);
+            button1.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            button1.Location = new Point(499, 512);
+            button1.Name = "button1";
+            button1.Size = new Size(270, 46);
+            button1.TabIndex = 2;
+            button1.Text = "Generar nueva foto";
+            button1.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -446,6 +471,7 @@
             tabPreferencias.ResumeLayout(false);
             tabPreferencias.PerformLayout();
             tabVisualizacion.ResumeLayout(false);
+            tabVisualizacion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             flowLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
@@ -486,5 +512,7 @@
         private PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;
         private ToolTip toolTip1;
+        private Button button1;
+        private Label label1;
     }
 }
