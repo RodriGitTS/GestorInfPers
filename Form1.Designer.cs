@@ -55,23 +55,26 @@
             chkLstHobbies = new CheckedListBox();
             chkbxBoletin = new CheckBox();
             tabVisualizacion = new TabPage();
-            pictureBox1 = new PictureBox();
+            lblCronometro = new Label();
+            btnImagenes = new Button();
+            lblFoto = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
             btnGuardar = new Button();
             btnLimpiar = new Button();
             btnSalir = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
             toolTip1 = new ToolTip(components);
-            label1 = new Label();
-            button1 = new Button();
+            helpProvider1 = new HelpProvider();
+            picAleatorio = new PictureBox();
+            imageList1 = new ImageList(components);
             tabControl1.SuspendLayout();
             tabDatosPersonales.SuspendLayout();
             chkgrpGenero.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nupdownEdad).BeginInit();
             tabPreferencias.SuspendLayout();
             tabVisualizacion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picAleatorio).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -357,9 +360,10 @@
             // tabVisualizacion
             // 
             tabVisualizacion.BackColor = Color.FromArgb(0, 64, 64);
-            tabVisualizacion.Controls.Add(button1);
-            tabVisualizacion.Controls.Add(label1);
-            tabVisualizacion.Controls.Add(pictureBox1);
+            tabVisualizacion.Controls.Add(lblCronometro);
+            tabVisualizacion.Controls.Add(btnImagenes);
+            tabVisualizacion.Controls.Add(lblFoto);
+            tabVisualizacion.Controls.Add(picAleatorio);
             tabVisualizacion.ForeColor = Color.Yellow;
             tabVisualizacion.Location = new Point(8, 46);
             tabVisualizacion.Name = "tabVisualizacion";
@@ -369,13 +373,40 @@
             tabVisualizacion.Text = "Visualizacion";
             tabVisualizacion.Click += tabVisualizacion_Click;
             // 
-            // pictureBox1
+            // lblCronometro
             // 
-            pictureBox1.Location = new Point(499, 251);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(280, 240);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            lblCronometro.AutoSize = true;
+            lblCronometro.BackColor = Color.Gray;
+            lblCronometro.Font = new Font("Segoe Script", 28.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCronometro.ForeColor = Color.Yellow;
+            lblCronometro.Location = new Point(165, 68);
+            lblCronometro.Name = "lblCronometro";
+            lblCronometro.Size = new Size(1011, 119);
+            lblCronometro.TabIndex = 3;
+            lblCronometro.Text = "DD/MM/YYY HH:MM:SS";
+            lblCronometro.Click += label2_Click;
+            // 
+            // btnImagenes
+            // 
+            btnImagenes.BackColor = Color.FromArgb(255, 128, 128);
+            btnImagenes.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnImagenes.Location = new Point(500, 586);
+            btnImagenes.Name = "btnImagenes";
+            btnImagenes.Size = new Size(270, 46);
+            btnImagenes.TabIndex = 2;
+            btnImagenes.Text = "Generar nueva foto";
+            btnImagenes.UseVisualStyleBackColor = false;
+            btnImagenes.Click += btn_Imagenes_Click;
+            // 
+            // lblFoto
+            // 
+            lblFoto.AutoSize = true;
+            lblFoto.Font = new Font("Trebuchet MS", 12F);
+            lblFoto.Location = new Point(500, 244);
+            lblFoto.Name = "lblFoto";
+            lblFoto.Size = new Size(292, 40);
+            lblFoto.TabIndex = 1;
+            lblFoto.Text = "Elige foto aleatoria";
             // 
             // flowLayoutPanel1
             // 
@@ -426,30 +457,28 @@
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
             // 
+            // timer1
+            // 
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
+            // 
             // toolTip1
             // 
             toolTip1.Popup += toolTip1_Popup;
             // 
-            // label1
+            // picAleatorio
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Trebuchet MS", 12F);
-            label1.Location = new Point(528, 181);
-            label1.Name = "label1";
-            label1.Size = new Size(215, 40);
-            label1.TabIndex = 1;
-            label1.Text = "Elige una foto";
+            picAleatorio.Location = new Point(500, 325);
+            picAleatorio.Name = "picAleatorio";
+            picAleatorio.Size = new Size(280, 240);
+            picAleatorio.TabIndex = 0;
+            picAleatorio.TabStop = false;
             // 
-            // button1
+            // imageList1
             // 
-            button1.BackColor = Color.FromArgb(255, 128, 128);
-            button1.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            button1.Location = new Point(499, 512);
-            button1.Name = "button1";
-            button1.Size = new Size(270, 46);
-            button1.TabIndex = 2;
-            button1.Text = "Generar nueva foto";
-            button1.UseVisualStyleBackColor = false;
+            imageList1.ColorDepth = ColorDepth.Depth32Bit;
+            imageList1.ImageSize = new Size(16, 16);
+            imageList1.TransparentColor = Color.Transparent;
             // 
             // Form1
             // 
@@ -472,8 +501,8 @@
             tabPreferencias.PerformLayout();
             tabVisualizacion.ResumeLayout(false);
             tabVisualizacion.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picAleatorio).EndInit();
             ResumeLayout(false);
         }
 
@@ -509,10 +538,13 @@
         private CheckBox chkbxBoletin;
         private Label lblPaises;
         private Label lblPais;
-        private PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;
         private ToolTip toolTip1;
-        private Button button1;
-        private Label label1;
+        private Button btnImagenes;
+        private Label lblFoto;
+        private Label lblCronometro;
+        private HelpProvider helpProvider1;
+        private PictureBox picAleatorio;
+        private ImageList imageList1;
     }
 }

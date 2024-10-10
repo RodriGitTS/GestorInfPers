@@ -8,8 +8,16 @@ namespace GestorInfPers
         public Form1()
         {
             InitializeComponent();
-        }
+            lblCronometro.Text = DateTime.Now.ToString();
+            timer1.Start();
+            imageList1.ImageSize = new System.Drawing.Size(400, 400);
+            for (int i=1; i <= 5; i++)
+            {
+                imageList1.Images.Add(Image.FromFile("imagen_aleatoria_"+i+ ".png"));
+            }
+            picAleatorio.Image= imageList1.Images[0];
 
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -115,29 +123,123 @@ namespace GestorInfPers
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+
+            if (camposVacios())
+            {
+                MessageBox.Show("Completa todos los campos");
+                }
+            else
+            {
+                if (!edadCorrecta())
+                {
+
+                    DialogResult result = MessageBox.Show("La edad no coincide con la fecha de nacimiento \n ¿Continuar?", "Error edad/fecha de nacimiento", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+
+                        mostrarResumen();
+                    }
+                }
+                else { mostrarResumen(); }
+
+
+            }
+        }
+
+         
+        
+        
+        void mostrarResumen()
+        {
             String nombre = txtbxNombre.Text;
             String apellidos = txtbdApellidos.Text;
-            String email = txtbxCorreo.Text;
-            String edad = nupdownEdad.Text;
+            String email = txtbxCorreo.Text.ToString();
+            String edad = nupdownEdad.Text.ToString();
             DateTime fecha_nac = monthCalendar1.SelectionStart;
-            String genero;
+            String genero = "";
             if (rbtnMasculino.Checked)
             {
-                genero = "masculino";
+                genero = "hombre";
             }
             else if (rbtnOtro.Checked)
             {
-                genero = "otro";
+                genero = "ni hombre ni mujer";
             }
             else if (rbtnFemenino.Checked)
             {
-                genero = "femenino";
+                genero = "mujer";
             }
-            Boolean suscrito = chkbxBoletin.Checked;
+            String suscrito = "";
+            if (chkbxBoletin.Checked) { suscrito = "suscrito al boletin"; } else suscrito = "no estas suscrito al boletin";
             String paises = cmbxPaises.Text;
-            ArrayList hobbies = new ArrayList();
-            //Recorrer y añadir los validos
+            
+           
+            
+            
+            
+           
 
+            MessageBox.Show(
+                "Te llamas " + nombre + " ," + genero + " de"+ edad+" años "+ "en " + paises + " , naciste el " + fecha_nac+
+                " \n" +ListaHobbies()+ "y" + suscrito + "\n"
+
+                , "Resumen para " + lblCorreo);
+        }
+
+
+        String ListaHobbies()
+        {
+            // Verificar si hay elementos seleccionados en el CheckedListBox
+            if (chkLstHobbies.CheckedItems.Count == 0)
+            {
+                return "Sin hobbies ";
+            }
+
+            String lista = "Tus hobbies son ";
+            ArrayList hobbies = new ArrayList();
+
+            // Recorrer los ítems seleccionados en el CheckedListBox
+            foreach (var item in chkLstHobbies.CheckedItems)
+            {
+                hobbies.Add(item.ToString());
+                lista += item.ToString() + ", ";
+            }
+
+           
+
+            return lista;
+        }
+
+
+        bool edadCorrecta()
+        {
+            int edad;
+            int year_actual;
+            int edadCalender;
+            int.TryParse(DateTime.Now.Year.ToString(), out edad);
+            int.TryParse(monthCalendar1.SelectionStart.Year.ToString(), out year_actual);
+            int.TryParse(nupdownEdad.Text.ToString(), out edadCalender);
+
+
+            if ((year_actual - edad) == edadCalender)
+            {
+                return true;
+            }
+            else return false;
+        }
+        bool camposVacios()
+        {
+
+
+            if (string.IsNullOrWhiteSpace(txtbxNombre.Text) ||
+            string.IsNullOrWhiteSpace(txtbdApellidos.Text) ||
+            string.IsNullOrWhiteSpace(txtbxCorreo.Text) ||
+             string.IsNullOrWhiteSpace(txtbxDireccion.Text) ||
+              nupdownEdad.Value == 0 || monthCalendar1.SelectionRange.Start == DateTime.MinValue)
+            {
+                return true;
+            }
+            else return false;
 
         }
 
@@ -149,6 +251,27 @@ namespace GestorInfPers
         private void tabVisualizacion_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_Imagenes_Click(object sender, EventArgs e)
+        {
+
+            Random random=new Random();
+            int numero=random.Next(4);
+           
+            picAleatorio.Image = imageList1.Images[numero];
+
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblCronometro.Text = DateTime.Now.ToString();
         }
     }
 }
