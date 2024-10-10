@@ -188,7 +188,7 @@ namespace GestorInfPers
         }
         String imagen()
         {
-            if (indiceActual == 4)
+            if (indiceActual == 3)
             {
                 return "Te ha salido una jirafa!!";
             }
